@@ -4,7 +4,7 @@ const App = () => {
     const [scrollY, setScrollY] = useState(0);
     const [animationComplete, setAnimationComplete] = useState(false);
 
-    const maxScrollLeft = 300;
+    const maxScrollLeft = 270;
     const maxScrollRight = 330;
     const maxScrollDown = 75;
     const maxScrollUp = 75;
@@ -49,22 +49,16 @@ const App = () => {
         <div>
             <div className="min-h-screen bg-white text-black px-8 py-10 font-sans">
                 {/* Header */}
-                <header className="fixed top-0 left-0 right-0 bg-white flex justify-between items-center px-8 py-5 z-50">
-                    <h1 className="font-bold text-lg relative">FORGE.</h1>
-                    <nav className="space-x-8 text-sm">
-                        <a href="#" className="hover:underline">
-                            Home
-                        </a>
-                        <a href="#" className="hover:underline">
-                            Services
-                        </a>
-                        <a href="#" className="hover:underline">
-                            Projects
-                        </a>
-                        <a href="#" className="hover:underline">
-                            Contact
-                        </a>
-                    </nav>
+                <header className="fixed top-0 left-0 right-0 bg-white z-50 py-5">
+                    <div className="px-28 flex justify-between items-center">
+                        <h1 className="font-bold text-lg">FORGE.</h1>
+                        <nav className="px-28 space-x-16 text-sm">
+                            <a href="#" className="hover:underline">Home</a>
+                            <a href="#" className="hover:underline">Services</a>
+                            <a href="#" className="hover:underline">Projects</a>
+                            <a href="#" className="hover:underline">Contact</a>
+                        </nav>
+                    </div>
                 </header>
 
                 {/* Main Content */}
@@ -78,7 +72,7 @@ const App = () => {
                     <main className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Left Text - moves right */}
                         <div
-                            className="space-y-14 text-9xl font-bold leading-tight ml-20 relative"
+                            className="space-y-14 text-9xl font-bold leading-tight ml-28 relative"
                             style={{
                                 transform: `translateX(${leftScroll}px)`,
                                 transition: "transform 0.3s ease-out",
