@@ -78,7 +78,7 @@ const App = () => {
                     <main className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Left Text - moves right */}
                         <div
-                            className="space-y-14 text-[12rem] font-bold leading-tight ml-20 relative"
+                            className="space-y-14 text-9xl font-bold leading-tight ml-20 relative"
                             style={{
                                 transform: `translateX(${leftScroll}px)`,
                                 transition: "transform 0.3s ease-out",
@@ -104,7 +104,7 @@ const App = () => {
                                 We build custom SaaS, AI tools, and lightning-fast MVPs for startups.
                             </p>
                             <h2
-                                className="text-[12rem] font-bold"
+                                className="text-9xl font-bold"
                                 style={{
                                     transform: `translateX(-${rightScroll}px)`,
                                     transition: "transform 0.3s ease-out",
