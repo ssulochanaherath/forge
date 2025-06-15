@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
-
-const App = () => {
+const Landing = () => {
     const [scrollY, setScrollY] = useState(0);
     const [animationComplete, setAnimationComplete] = useState(false);
+    const [exitAnimation, setExitAnimation] = useState(false);
     const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setExitAnimation(true);
+        setTimeout(() => navigate("/about-us"), 600); // Delay to match animation
+    };
 
     const maxScrollLeft = 270;
     const maxScrollRight = 330;
@@ -46,10 +53,18 @@ const App = () => {
 
     const fadeInScrollStart = 0;
     const fadeInScrollEnd = 200;
-    const opacityProgress = Math.min(Math.max((scrollY - fadeInScrollStart) / (fadeInScrollEnd - fadeInScrollStart), 0), 1);
+    const opacityProgress = Math.min(
+        Math.max((scrollY - fadeInScrollStart) / (fadeInScrollEnd - fadeInScrollStart), 0),
+        1
+    );
 
     return (
-        <div>
+        <motion.div
+            initial={{ y: 0, opacity: 1 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -1000, opacity: 0 }}
+            transition={{ duration: 0.6 }}
+        >
             <div className="min-h-screen bg-white text-black px-8 py-10 font-sans">
                 {/* Header */}
                 <header className="fixed top-0 left-0 right-0 bg-white z-50 py-5">
@@ -82,7 +97,6 @@ const App = () => {
                             }}
                         >
                             <div>Code</div>
-
                             <div className="relative inline-block">
                                 <span>Forge</span>
                             </div>
@@ -125,6 +139,7 @@ const App = () => {
 
             <div style={{ height: "50vh" }}></div>
 
+            {/* About Us Button */}
             <button
                 style={{
                     position: "fixed",
@@ -143,11 +158,7 @@ const App = () => {
                     width: "6rem",
                     height: "6rem",
                 }}
-                onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                    setTimeout(() => navigate("/about-us"), 500);
-                }}
-
+                onClick={handleNavigate}
             >
                 <div
                     style={{
@@ -166,7 +177,6 @@ const App = () => {
                             boxSizing: "border-box",
                         }}
                     />
-
                     <span
                         style={{
                             position: "absolute",
@@ -186,8 +196,8 @@ const App = () => {
                     </span>
                 </div>
             </button>
-        </div>
+        </motion.div>
     );
 };
 
-export default App;
+export default Landing;
