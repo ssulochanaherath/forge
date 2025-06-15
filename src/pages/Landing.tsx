@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const App = () => {
     const [scrollY, setScrollY] = useState(0);
     const [animationComplete, setAnimationComplete] = useState(false);
+    const navigate = useNavigate();
 
     const maxScrollLeft = 270;
     const maxScrollRight = 330;
@@ -85,7 +88,6 @@ const App = () => {
                             </div>
                         </div>
 
-
                         {/* Right Text */}
                         <div className="flex flex-col justify-center space-y-6">
                             <p
@@ -141,7 +143,11 @@ const App = () => {
                     width: "6rem",
                     height: "6rem",
                 }}
-                onClick={() => alert("About Us clicked!")}
+                onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    setTimeout(() => navigate("/about-us"), 500);
+                }}
+
             >
                 <div
                     style={{
@@ -176,11 +182,10 @@ const App = () => {
                             whiteSpace: "nowrap",
                         }}
                     >
-                    About Us
+                        About Us
                     </span>
                 </div>
             </button>
-
         </div>
     );
 };
