@@ -8,12 +8,6 @@ const Landing = () => {
     const [exitAnimation, setExitAnimation] = useState(false);
     const navigate = useNavigate();
 
-    const handleNavigate = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        setExitAnimation(true);
-        setTimeout(() => navigate("/about-us"), 600); // Delay to match animation
-    };
-
     const maxScrollLeft = 270;
     const maxScrollRight = 330;
     const maxScrollDown = 75;
@@ -41,9 +35,10 @@ const Landing = () => {
             }
         };
 
+        document.body.style.overflow = exitAnimation ? "hidden" : "auto";
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [animationComplete, maxAnimationScroll]);
+    }, [animationComplete, maxAnimationScroll, exitAnimation]);
 
     const leftScroll = Math.min(scrollY, maxScrollLeft);
     const rightScroll = Math.min(scrollY, maxScrollRight);
@@ -141,6 +136,7 @@ const Landing = () => {
 
             {/* About Us Button */}
             <button
+                onClick={() => setExitAnimation(true)}
                 style={{
                     position: "fixed",
                     bottom: 150,
@@ -158,7 +154,6 @@ const Landing = () => {
                     width: "6rem",
                     height: "6rem",
                 }}
-                onClick={handleNavigate}
             >
                 <div
                     style={{
@@ -195,6 +190,24 @@ const Landing = () => {
                         About Us
                     </span>
                 </div>
+
+                {exitAnimation && (
+                    <motion.div
+                        initial={{ y: 1000, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.6 }}
+                        className="fixed top-0 left-0 w-full h-full bg-white z-[999]"
+                    >
+                        <div className="p-16 text-black">
+                            <h1 className="text-6xl font-bold mb-6">About Us</h1>
+                            <p className="text-lg leading-relaxed max-w-3xl">
+                                We are a passionate team building modern SaaS products, AI-powered tools, and rapid MVPs to accelerate startup success.
+                                Our mission is to craft innovative software experiences with precision and speed.
+                            </p>
+                        </div>
+                    </motion.div>
+                )}
+
             </button>
         </motion.div>
     );
