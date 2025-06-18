@@ -161,22 +161,22 @@ const Landing = () => {
                     {/* Social icon links */}
                     {[
                         { name: "Facebook", link: "#", icon: (
-                                <svg width="35" height="35" fill="black" viewBox="0 0 24 24">
+                                <svg width="35" height="35" fill="grey" viewBox="0 0 24 24">
                                     <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54v-2.2c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.86h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12z"/>
                                 </svg>
                             )},
                         { name: "Instagram", link: "#", icon: (
-                                <svg width="35" height="35" fill="black" viewBox="0 0 24 24">
+                                <svg width="35" height="35" fill="grey" viewBox="0 0 24 24">
                                     <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.5-.25a1 1 0 110 2 1 1 0 010-2z"/>
                                 </svg>
                             )},
                         { name: "X", link: "#", icon: (
-                                <svg width="35" height="35" fill="black" viewBox="0 0 24 24">
+                                <svg width="35" height="35" fill="grey" viewBox="0 0 24 24">
                                     <path d="M20.39 3H17.5l-4.24 5.7L8.06 3H3l7.5 10L3 21h2.89l4.97-6.73L15.94 21H21l-7.58-10L20.39 3z"/>
                                 </svg>
                             )},
                         { name: "LinkedIn", link: "#", icon: (
-                                <svg width="35" height="35" fill="black" viewBox="0 0 24 24">
+                                <svg width="35" height="35" fill="grey" viewBox="0 0 24 24">
                                     <path d="M4.98 3.5a2.5 2.5 0 11.001 5.001A2.5 2.5 0 014.98 3.5zM3 8.98h4v12H3v-12zm7.5 0h3.5v1.64h.05c.49-.93 1.68-1.91 3.46-1.91 3.7 0 4.38 2.44 4.38 5.61v6.66h-4v-5.91c0-1.41-.03-3.23-1.97-3.23-1.97 0-2.27 1.54-2.27 3.13v6.01h-4v-12z"/>
                                 </svg>
                             )},
