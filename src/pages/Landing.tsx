@@ -102,8 +102,29 @@ const Landing = () => {
                             >
                                 <div>Code</div>
                                 <div className="relative inline-block">
+                                    {/* Vertical "We are" beside 'F' */}
+                                    <div
+                                        style={{
+                                            position: "absolute",
+                                            left: "-3.5rem",
+                                            top: "0.2rem",
+                                            writingMode: "vertical-rl",
+                                            textOrientation: "upright",
+                                            fontSize: "0.75rem",
+                                            color: "#1C1C1C",
+                                            opacity: opacityProgress,
+                                            transform: `translateX(${-(1 - opacityProgress) * 200}px)`,
+                                            transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+                                            fontWeight: "500",
+                                            letterSpacing: "0.1rem",
+                                        }}
+                                    >
+                                        We are
+                                    </div>
+
                                     <span>Forge</span>
                                 </div>
+
                             </div>
 
                             {/* Right Text */}
