@@ -143,6 +143,93 @@ const Landing = () => {
 
                 <div style={{ height: "50vh" }}></div>
 
+                {/* Social Buttons - vertical stack on the left side */}
+                <div
+                    style={{
+                        position: "fixed",
+                        top: "40%",
+                        left: 40,       // some margin from left
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "1.5rem",
+                        opacity: opacityProgress,
+                        transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+                        transform: `translateX(${-(1 - opacityProgress) * 200}px)`, // slide in from left
+                        zIndex: 100,
+                    }}
+                >
+                    {/* Helper to render icon buttons */}
+                    {[
+                        { name: "Facebook", icon: (
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54v-2.2c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.86h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12z"/>
+                                </svg>
+                            )},
+                        { name: "Instagram", icon: (
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.5-.25a1 1 0 110 2 1 1 0 010-2z"/>
+                                </svg>
+                            )},
+                        { name: "X (Twitter)", icon: (
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M23 3a10.9 10.9 0 01-3.14.86 5.48 5.48 0 002.4-3.04 11.2 11.2 0 01-3.47 1.33 5.52 5.52 0 00-9.4 5.03 15.65 15.65 0 01-11.35-5.75 5.52 5.52 0 001.7 7.36A5.45 5.45 0 012 9.7v.07a5.52 5.52 0 004.42 5.4 5.53 5.53 0 01-2.5.1 5.53 5.53 0 005.15 3.83 11.06 11.06 0 01-6.8 2.35A11.14 11.14 0 010 19.54a15.62 15.62 0 008.44 2.48c10.13 0 15.68-8.38 15.68-15.65 0-.24 0-.47-.02-.7A11.22 11.22 0 0023 3z"/>
+                                </svg>
+                            )},
+                        { name: "LinkedIn", icon: (
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M4.98 3.5a2.5 2.5 0 11.001 5.001A2.5 2.5 0 014.98 3.5zM3 8.98h4v12H3v-12zm7.5 0h3.5v1.64h.05c.49-.93 1.68-1.91 3.46-1.91 3.7 0 4.38 2.44 4.38 5.61v6.66h-4v-5.91c0-1.41-.03-3.23-1.97-3.23-1.97 0-2.27 1.54-2.27 3.13v6.01h-4v-12z"/>
+                                </svg>
+                            )},
+                    ].map(({ name, icon }) => (
+                        <button
+                            key={name}
+                            title={name}
+                            style={{
+                                width: "3.5rem",
+                                height: "3.5rem",
+                                borderRadius: "50%",
+                                border: "3px solid black",
+                                backgroundColor: "transparent",
+                                cursor: "pointer",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                            }}
+                            onClick={() => {
+                                // Add your social link logic here if needed
+                                alert(`Clicked on ${name}`);
+                            }}
+                        >
+                            {icon}
+                        </button>
+                    ))}
+                </div>
+
+
                 {/* About Us Button */}
                 <button
                     onClick={() => setExitAnimation(true)}
