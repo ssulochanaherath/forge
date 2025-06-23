@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Landing from "./pages/Landing.tsx";
+import AboutUs from "./pages/AboutUs.tsx";
 
 const AnimatedRoutes = () => {
     const location = useLocation();
@@ -10,6 +11,7 @@ const AnimatedRoutes = () => {
         <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Landing />} />
+                <Route path="/about" element={<AboutUs />} />
             </Routes>
         </AnimatePresence>
     );
