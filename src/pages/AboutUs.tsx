@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "../components/Navbar"; // ✅ Update path if different
 
 const AboutSection = () => {
     const [scrollY, setScrollY] = useState(0);
@@ -26,17 +27,7 @@ const AboutSection = () => {
 
     return (
         <div className="min-h-screen px-8 md:px-32 py-16 font-sans text-black bg-white">
-            {/* Header */}
-            <header className="flex justify-between items-center py-4">
-                <h1 className="font-bold text-xl">FORGE.</h1>
-                <nav className="space-x-10 text-sm font-medium">
-                    <a href="#" className="hover:underline">Home</a>
-                    <a href="#" className="hover:underline">About</a>
-                    <a href="#" className="hover:underline">Portfolio</a>
-                    <a href="#" className="hover:underline">Contact</a>
-                    <a href="#" className="hover:underline">Lorem</a>
-                </nav>
-            </header>
+            <Navbar /> {/* ✅ Reusable header */}
 
             {/* Intro Section */}
             <section className="grid md:grid-cols-2 gap-10 mt-16">
