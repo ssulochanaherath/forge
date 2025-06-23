@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import Navbar from "../components/Navbar.tsx"
 
 const Landing = () => {
     const [scrollY, setScrollY] = useState(0);
@@ -55,33 +56,13 @@ const Landing = () => {
 
     return (
         <>
-            {/* Landing content container that animates up and fades out */}
             <motion.div
                 initial={{ y: 0, opacity: 1 }}
                 animate={{ y: exitAnimation ? -1000 : 0, opacity: exitAnimation ? 0 : 1 }}
                 transition={{ duration: 0.6 }}
             >
                 <div className="min-h-screen bg-white text-black px-8 py-10 font-sans">
-                    {/* Header */}
-                    <header className="fixed top-0 left-0 right-0 bg-white z-50 py-5">
-                        <div className="px-28 flex justify-between items-center">
-                            <h1 className="font-bold text-lg">FORGE.</h1>
-                            <nav className="px-28 space-x-16 text-sm">
-                                <a href="#" className="hover:underline">
-                                    Home
-                                </a>
-                                <a href="#" className="hover:underline">
-                                    Services
-                                </a>
-                                <a href="#" className="hover:underline">
-                                    Projects
-                                </a>
-                                <a href="/about" className="hover:underline">
-                                    Contact
-                                </a>
-                            </nav>
-                        </div>
-                    </header>
+                    <Navbar /> {/* <== Reusable Component */}
 
                     {/* Main Content */}
                     <div
