@@ -7,10 +7,10 @@ const Navbar = () => {
             <div className="px-28 flex justify-between items-center">
                 <h1 className="font-bold text-lg">FORGE.</h1>
                 <nav className="px-28 space-x-16 text-sm">
-                    <a href="#" className="hover:underline">Home</a>
+                    <Link to="/about" className="hover:underline">Home</Link>
                     <a href="#" className="hover:underline">Services</a>
                     <a href="#" className="hover:underline">Projects</a>
-                    <Link to="/about" className="hover:underline">Contact</Link>
+                    <Link to="/contact" className="hover:underline">Contact</Link>
                 </nav>
             </div>
         </header>
