@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from "../components/Navbar"; // ✅ Update this path if your Navbar is elsewhere
+import Navbar from "../components/Navbar.tsx";
 
 const services = [
     {
@@ -18,9 +18,11 @@ const services = [
 
 const Service = () => {
     return (
-        <div className="min-h-screen px-8 md:px-32 pt-24 pb-16 font-sans text-black bg-white">
-            <Navbar /> {/* ✅ Fixed Navbar should now not overlap content */}
+        <div>
+            <Navbar /> {/* <== Reusable Component */}
 
+
+        <div className="px-6 md:px-16 lg:px-24 py-10">
             {/* Top Header Section */}
             <section className="max-w-3xl">
                 <h1 className="text-2xl md:text-4xl font-semibold leading-snug">
@@ -36,10 +38,7 @@ const Service = () => {
             {/* Services List */}
             <div className="mt-16 flex flex-col gap-20">
                 {services.map((service, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col md:flex-row items-start justify-between gap-8"
-                    >
+                    <div key={index} className="flex flex-col md:flex-row items-start justify-between gap-8">
                         {/* Text Content */}
                         <div className="flex-1">
                             <h2 className="text-xl font-semibold">{service.title}</h2>
@@ -47,13 +46,14 @@ const Service = () => {
                             <p className="text-sm text-gray-600 mt-2">{service.text}</p>
                         </div>
 
-                        {/* Scroll Animation Placeholder */}
-                        <div className="flex-1 bg-blue-100 text-center py-20 text-gray-600 rounded-md shadow-sm">
+                        {/* Scroll Animation Box */}
+                        <div className="flex-1 bg-blue-100 text-center py-20 text-gray-600">
                             scroll <br /> animation
                         </div>
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     );
 };

@@ -5,6 +5,7 @@ import Landing from "./pages/Landing.tsx";
 import AboutUs from "./pages/AboutUs.tsx";
 import Contact from "./pages/Contact.tsx";
 import Portfolio from "./pages/Portfolio.tsx";
+import Services from "./pages/Services.tsx";
 
 const AnimatedRoutes = () => {
     const location = useLocation();
@@ -16,6 +17,7 @@ const AnimatedRoutes = () => {
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/services" element={<Services />} />
             </Routes>
         </AnimatePresence>
     );
